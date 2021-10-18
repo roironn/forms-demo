@@ -68,7 +68,6 @@ export class EligibilityForm extends React.Component {
   handleSubmit(event) {
     try {
     console.log(this.state)
-    createResultForm()
     event.preventDefault()
     } catch (e) {
       console.log("OY VEY")
@@ -94,7 +93,7 @@ export class EligibilityForm extends React.Component {
           getValue={this.getValue}
           setAnswer={this.setAnswer}
         />)}
-        <input type="submit" value="Submit!!!" />
+        <input type="submit" value="Submit!!!" onClick={createResultForm}/>
       </form>
     )
   }
