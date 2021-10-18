@@ -1,0 +1,9 @@
+[ ] Share
+    [ ] Get questions answers and log them
+    [ ] Translate to PDF
+    [ ] Share PDF using web share api
+[ ] Table input
+[ ] Automatic zachai/lo zachai
+[ ] (Hide dependent questions)
+[ ] CSS
+[ ] Hosting
