@@ -50,7 +50,7 @@ const createResultForm = async () => {
   })
   console.log("WORKED?")
   } catch (e) {
-    console.log(e)
+    alert(e)
   } 
 }
 
