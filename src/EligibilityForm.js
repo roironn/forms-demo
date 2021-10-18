@@ -44,6 +44,8 @@ const createResultForm = async () => {
   console.log(data)
   try {
   await navigator.share({
+    title: "share this",
+    text:"you need to share this",
     files: [
       new File(Buffer.from(data), 'filename.pdf')
     ]
@@ -93,7 +95,7 @@ export class EligibilityForm extends React.Component {
           getValue={this.getValue}
           setAnswer={this.setAnswer}
         />)}
-        <input type="submit" value="Submit!!!" onClick={createResultForm}/>
+        <input type="submit" value="Send" onClick={createResultForm}/>
       </form>
     )
   }
