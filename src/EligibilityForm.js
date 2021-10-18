@@ -33,7 +33,7 @@ function createDefaultAnswers() {
 const createResultForm = async () => {
   var doc = new jsPDF();
   var formToRender = document.getElementById('eliForm')
-  console.log(formToRender)
+  alert('hiii!!!!')
   doc.setR2L(true)
   doc.setFont('Alef-Regular', 'normal')
   doc.text('למה דגככה????', 100 , 10, {
@@ -94,7 +94,7 @@ export class EligibilityForm extends React.Component {
           getValue={this.getValue}
           setAnswer={this.setAnswer}
         />)}
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit!!!" />
       </form>
     )
   }
