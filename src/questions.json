@@ -1,9 +1,16 @@
 {
     "sections" : [
       {
+        "header" : true,
         "title" : "שאלון זכאות כלכלית לעצור ובקשה למינוי סניגור ציבורי",
         "description" : " לפי תקנות הסניגוריה הציבורית (ייצוג נאשמים מחוסרי אמצעים) התשנ\"ח - 1998, ולפי תקנה 1 לתקנות הסניגוריה הציבורית, התשנ\"ו - 1996 (במקום טופס 1, בנסיבות שנמנע מעצור למלא \"בקשה למינוי סניגור ציבורי\")",
-        "questions" : []
+        "questions" : [
+          {
+            "type" : "text",
+            "text" : "שם העו\"ד",
+            "marker" : "lawyer_name"
+          }
+        ]
       },
       {
         "title" : "פרטים על המבקש/ת",
@@ -11,22 +18,25 @@
         "questions" : [
           {
             "type" : "text",
-            "text" : "שם משפחה"
+            "text" : "שם משפחה",
+            "marker" : "last_name"
           },
           {
             "type" : "text",
-            "text" : "שם פרטי"
+            "text" : "שם פרטי",
+            "marker" : "first_name"
           },
           {
-            "type" : "text",
-            "text" : "מספר ת\"ז/דרכון"
+            "type" : "number",
+            "text" : "מספר ת\"ז/דרכון",
+            "marker" : "uuid"
           },
           {
             "type" : "text",
             "text" : "שם האב"
           },
           {
-            "type" : "text",
+            "type" : "number",
             "text" : "שנת לידה"
           },
           {
@@ -45,7 +55,7 @@
             "text" : "כתובת"
           },
           {
-            "type" : "text",
+            "type" : "number",
             "text" : "טלפון"
           }
         ]
@@ -60,15 +70,32 @@
             "options" : [
               "כן",
               "לא"
+            ],
+            "subQuestions" : [
+              {
+                "when" : "כן",
+                "type" : "number",
+                "text" : "במידה ועובד, מה ההכנסה החודשית הממוצעת?",
+                "marker" : "avg_income"
+              }
             ]
           },
           {
-            "type" : "text",
-            "text" : "במידה ועובד, מה השכר הממוצע החודשי (ברוטו)"
-          },
-          {
-            "type" : "header",
-            "text" : "הטבלא של הדר"
+            "type" : "table",
+            "text" : "מתגוררים איתו ומנהלים איתו משק בית משותף",
+            "cols" : [
+              "שם",
+              "קירבה משפחתית",
+              "מקום העבודה",
+              "הכנסה חודשית"
+            ],
+            "types" : [
+              "text",
+              "text",
+              "text",
+              "number"
+            ],
+            "marker" : "household"
           }
         ]
       },
@@ -82,31 +109,47 @@
             "options" : [
               "כן",
               "לא"
+            ],
+            "subQuestions" : [
+              {
+                "when" : "כן",
+                "type" : "select",
+                "text" : "אם כן - האם מתגורר בה?",
+                "options" : [
+                  "כן",
+                  "לא"
+                ],
+                "subQuestions" : [
+                  {
+                    "when" : "לא",
+                    "type" : "select",
+                    "text" : "אם לא - האם מקבל דמי שכירות עבורה?",
+                    "options" : [
+                      "כן",
+                      "לא"
+                    ],
+                    "subQuestions" : [
+                      {
+                        "when" : "כן",
+                        "type" : "number",
+                        "text" : "אם כן - מה סכום דמי השכירות",
+                        "marker" : "rent"
+                      },
+                      {
+                        "when" : "לא",
+                        "type" : "select",
+                        "text" : "אם לא - האם יכול למכור את הדירה או לקבל הלוואה בגינה",
+                        "options" : [
+                          "כן",
+                          "לא"
+                        ],
+                        "marker" : "can_sell_apt"
+                      }
+                    ]
+                  }
+                ]
+              }
             ]
-          },
-          {
-            "type" : "select",
-            "text" : "אם כן - האם מתגורר בה?",
-            "options" : [
-              "כן",
-              "לא"
-            ]
-          },
-          {
-            "type" : "select",
-            "text" : "אם לא - האם מקבל דמי שכירות עבורה?",
-            "options" : [
-              "כן",
-              "לא"
-            ]
-          },
-          {
-            "type" : "header",
-            "text" : "אם כן - מה סכום דמי השכירות"
-          },
-          {
-            "type" : "header",
-            "text" : "אם לא - האם יכול למכור את הדירה או לקבל הלוואה בגינה"
           }
         ]
       },
@@ -120,11 +163,14 @@
             "options" : [
               "כן",
               "לא"
+            ],
+            "subQuestions" : [
+              {
+                "when" : "כן",
+                "type" : "number",
+                "text" : "אם כן - מה סוג הנכס וערכו?"
+              }
             ]
-          },
-          {
-            "type" : "text",
-            "text" : "אם כן - מה סוג הנכס וערכו?"
           },
           {
             "type" : "select",
@@ -132,11 +178,14 @@
             "options" : [
               "כן",
               "לא"
+            ],
+            "subQuestions" : [
+              {
+                "when" : "כן",
+                "type" : "number",
+                "text" : "אם כן - מה ערכו?"
+              }
             ]
-          },
-          {
-            "type" : "header",
-            "text" : "אם כן - מה סוג הרכב וערכו?"
           },
           {
             "type" : "select",
@@ -144,18 +193,16 @@
             "options" : [
               "כן",
               "לא"
+            ],
+            "subQuestions" : [
+              {
+                "when" : "כן",
+                "type" : "number",
+                "text" : "אם כן - ציין שוויים הכולל"
+              }
             ]
-          },
-          {
-            "type" : "header",
-            "text" : "אם כן - ציין שוויים הכולל"
           }
         ]
-      },
-      {
-        "title" : "הצהרת העצור",
-        "description" : "copy text",
-        "questions" : []
       }
     ]
 }

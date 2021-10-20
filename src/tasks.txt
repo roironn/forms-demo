@@ -1,9 +1,33 @@
-[ ] Share
-    [ ] Get questions answers and log them
-    [ ] Translate to PDF
-    [ ] Share PDF using web share api
-[ ] Table input
+[V] Share
+    [V] Get questions answers and log them
+    [V] Translate to PDF
+    [V] Share PDF using web share api
+[V] Table input
+    [V] Simple (set num of lines)
+    [V] Render
+    [V] Add lines
 [ ] Automatic zachai/lo zachai
-[ ] (Hide dependent questions)
+[V] (Hide dependent questions)
+[V] Hosting
+
 [ ] CSS
-[ ] Hosting
+    [V] Base
+    [V] Header Image
+[V] Slideshow
+[ ] Format PDF
+
+[ ] Autofocus?
+[ ] Extra forms?
+[ ] Add date time to PDF
+[ ] Validation
+    [ ] Number input?
+    [ ] Boolean input?
+
+
+[V] Btn hover color
+[V] Default select values
+[V] Table
+[V] Add missing statements
+[V] zachai lo zachai
+[ ] Format PDF
+[ ] Wierd H1 box model
